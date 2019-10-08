@@ -3,7 +3,7 @@ const Telegraf = require('telegraf');
 const JsonDB = require('node-json-db').JsonDB;
 
 //const bot = new Telegraf(); //file bot_token should contain the telegram bot token provided by bot father
-const bot_token = fs.readFileSync("bot_token", 'utf-8').toString().trim();
+const bot_token = process.env.BOT_TOKEN;
 const bot = new Telegraf(bot_token); //file bot_token should contain the telegram bot token provided by bot father
 
 var db = new JsonDB("db", true, true);
